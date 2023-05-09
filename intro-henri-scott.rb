@@ -34,14 +34,28 @@ var_two = 13
 # Complete the following challenges in a Ruby file.
 
 # Create a variable and return it in a sentence using string interpolation.
+vegtables = 'carrots' 
+puts "I like to eat #{vegtables}"
 # Create a variable that contains a string and test some of the Ruby string methods:
+words = hello
+
 # .upcase
+words.upcase
+ => "HELLO" 
 # .reverse
+words.reverse
+ => "olleh" 
 # .include?
+
 # .capitalize
+words.capitalize
+ => "Hello" 
 # .delete
+
 # .index
+
 # .swapcase
+
 # Create an array that contains the name of at least five TV shows you enjoy.
 # Find the length of the array.
 # Return the first item in the array.
