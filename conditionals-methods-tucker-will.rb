@@ -35,33 +35,56 @@
 # p palindrome('tucker')
 
 
-puts 'First player enter your name'
-first_name = gets.chomp
+# puts 'First player enter your name'
+# first_name = gets.chomp
 
-puts 'Second player enter your name'
-second_name = gets.chomp
+# puts 'Second player enter your name'
+# second_name = gets.chomp
 
-puts "#{first_name}, please enter one of the following: Rock, Paper, or Scissors"
-first_response = gets.chomp
+# puts "#{first_name}, please enter one of the following: Rock, Paper, or Scissors"
+# first_response = gets.chomp
 
-puts "#{second_name}, please enter one of the following: Rock, Paper, or Scissors"
-second_response = gets.chomp
+# puts "#{second_name}, please enter one of the following: Rock, Paper, or Scissors"
+# second_response = gets.chomp
 
 
-def rps_winner (string1, string2, name1, name2)
+# def rps_winner (string1, string2, name1, name2)
 
-    if (string1 == string2)
-        'Tie!!'
-    elsif (string1 == 'rock' && string2 == 'scissors')
-        "#{name1} wins!!!"
-    elsif (string1 == 'scissors' && string2 == 'paper')
-        "#{name1} wins!!!"
-    elsif (string1 == 'paper' && string2 == 'rock')
-        "#{name1} wins!!!"
-    else
-        "#{name2} wins!!!"
+#     if (string1 == string2)
+#         'Tie!!'
+#     elsif (string1 == 'rock' && string2 == 'scissors')
+#         "#{name1} wins!!!"
+#     elsif (string1 == 'scissors' && string2 == 'paper')
+#         "#{name1} wins!!!"
+#     elsif (string1 == 'paper' && string2 == 'rock')
+#         "#{name1} wins!!!"
+#     else
+#         "#{name2} wins!!!"
+#     end
+
+# end
+
+# p rps_winner(first_response, second_response, first_name, second_name)
+
+
+
+# Password Checker
+p 'Please enter your User ID.'
+user_id = gets.chomp
+p 'Please enter your Password'
+password = gets.chomp
+
+def criteria(id, password)
+    if id == password
+        'Your User ID and Password cannot be the same'
+    elsif id.length < 6 || password.length < 6
+        'Your User ID and Password must be atleast six characters long.'
+    elsif !password.match? /\A[!,#,$]\z/
+        'Your Password must contain one of the following: !, #, $.'
+    
     end
 
-end
 
-p rps_winner(first_response, second_response, first_name, second_name)
+end    
+
+p criteria(user_id, password)
