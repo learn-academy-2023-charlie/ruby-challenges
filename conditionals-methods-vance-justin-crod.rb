@@ -44,9 +44,52 @@ p is_palindrome('tacocat')
 
 # ✂️ Challenge: Rock, Paper, Scissors
 # As the first user, I can see a prompt in the terminal to enter my name.
+
+puts 'User 1 enter your name please!'
+$user_name1 = gets.chomp
+p $user_name1
+
 # As the second user, I can see a prompt in the terminal to enter my name.
+
+puts 'User 2 enter your name please!'
+$user_name2 = gets.chomp
+p $user_name2
+
 # As the first user, I can see a prompt in the terminal asking me to type either "rock", "paper", or "scissors".
+
+puts "#{$user_name1}, Select rock, paper or scissors:"
+user1_choice = gets.chomp
+
 # As the second user, I can see a prompt in the terminal asking me to type either "rock", "paper", or "scissors".
+
+puts "#{$user_name2}, Select rock, paper or scissors:"
+user2_choice = gets.chomp
+
 # As a user, I can see a message in the terminal depicting which user won the round.
+
+def jan_ken_pon(choice1, choice2)
+    if choice1 == 'rock' && choice2 == 'scissors'
+        "#{$user_name1} is the winner!"
+    elsif choice1 == 'rock' && choice2 == 'paper'
+        "#{$user_name2} is the winner!"
+    elsif choice1 == 'rock' && choice2 == 'rock'
+        "#{$user_name1} and #{$user_name2} tied!"
+    elsif choice1 == 'paper' && choice2 == 'rock'
+        "#{$user_name1} is the winner!"
+    elsif choice1 == 'paper' && choice2 == 'scissors'
+        "#{$user_name2} is the winner!"
+    elsif choice1 == 'paper' && choice2 == 'paper'
+        "#{$user_name1} and #{$user_name2} tied!"
+    elsif choice1 == 'scissors' && choice2 == 'rock'
+        "#{$user_name2} is the winner!"
+    elsif choice1 == 'scissors' && choice2 == 'paper'
+        "#{$user_name1} is the winner!"
+    elsif choice1 == 'scissors' && choice2 == 'scissors'
+        "#{$user_name1} and #{$user_name2} tied!"
+    end
+end
+p jan_ken_pon(user1_choice, user2_choice)
+
 # As a user, I can see a message in the terminal noting if there was a tie.
 
+# DONE
