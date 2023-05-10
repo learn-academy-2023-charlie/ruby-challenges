@@ -51,17 +51,32 @@ words.reverse
 words.capitalize
  => "Hello" 
 # .delete
-
+3.2.0 :006 > words.delete("e")
+ => "hllo" 
 # .index
-
+3.2.0 :015 > words.index("h")
+ => 0 
 # .swapcase
-
+words.swapcase!
+ => "HELLO" 
 # Create an array that contains the name of at least five TV shows you enjoy.
+
+
 # Find the length of the array.
+
+
 # Return the first item in the array.
+
+
 # Return the fourth item in the array.
+
+
 # Permanently reverse the order of the array.
+
+
 # Create a new empty array for your top favorite TV shows.
+
+
 # Using the full TV show array, add your top two favorite shows to the empty array.
 
 
