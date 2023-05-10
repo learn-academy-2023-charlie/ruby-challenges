@@ -2,6 +2,8 @@
 # ❤️ Challenges
 
 
+=begin
+
 
 # Create a method called sum_these_numbers which takes two integers as an argument and prints their sum to the screen.
 #option1:
@@ -11,16 +13,16 @@ p sum_these_numbers
 def add_up(num1, num2)
     num1 + num2
    end
-  p add_up(9, 10)
+  p add_up(9, 10) 
 #Create a method called is_even, which takes a single integer, and which then returns true if the number is even, and false otherwise. 
-my_num = 9
+my_num = 9 
 def is_even num
     if num % 2 == 0
      "even"
     else "odd"
     end
 end
-p is_even my_num
+p is_even my_num 
 
 
 
@@ -33,7 +35,7 @@ def is_val num
     end
 end
 p is_val 9
-p is_val 15
+p is_val 15 
 
 
 #Create a method that takes in a string and determines if the string is a palindrome.
@@ -47,13 +49,36 @@ def str_pal str
 end
 p str_pal my_pal
 
+=end
 
 
 #✂️ Challenge: Rock, Paper, Scissors
 
+puts 'enter your name'
+player1 = gets.chomp 
+puts 'enter your name'
+player2 = gets.chomp
 
+puts '#{player1} choose rock, paper, scissors'
+player1 = gets.chomp 
+puts '#{player2} choose rock, paper, scissors'
+player2 = gets.chomp
 
+def game (player1, player2) 
+ if player1 == player2
+    'tie!'
+elsif  (player1 == 'rock' && player2 == 'scissors') ||
+    (player1 == 'paper' && player2 == 'rock') ||
+    (player1== 'scissors' && player2 == 'paper')
+    'player1 wins!'
+else
+    'player2 wins!'
+end
+end        
 
+game (player1, player2)
+puts result 
+          
 #As the first user, I can see a prompt in the terminal to enter my name.
 
 
