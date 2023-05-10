@@ -60,23 +60,25 @@ words.capitalize
 words.swapcase!
  => "HELLO" 
 # Create an array that contains the name of at least five TV shows you enjoy.
-
+> tv_shows = ["jeopardy", "oprah", "southpark", "thesimpsons", "g
+ameofthrones"]
 
 # Find the length of the array.
-
-
+> tv_shows.length
+ => 5 
 # Return the first item in the array.
-
-
+> tv_shows[0]
+ => "jeopardy" 
 # Return the fourth item in the array.
-
-
+> tv_shows[3]
+ => "thesimpsons" 
 # Permanently reverse the order of the array.
-
-
+> tv_shows.reverse
+ => ["gameofthrones", "thesimpsons", "southpark", "oprah", "jeopardy"] 
 # Create a new empty array for your top favorite TV shows.
-
-
+> topFav = []
+ => [] 
 # Using the full TV show array, add your top two favorite shows to the empty array.
-
+> topFav = tv_shows[0, 2]
+ => ["jeopardy", "oprah"]
 
