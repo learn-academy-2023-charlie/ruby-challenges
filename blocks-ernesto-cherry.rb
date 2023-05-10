@@ -30,7 +30,7 @@ end
 
 # Create a method that takes in an array of numbers and returns a new array with all the numbers multiplied by 5.
 
-array_of_numbers = [1, 7, 487, 03, 75]
+array_of_numbers = [1, 7, 487, 03, 75, 6]
 array_of_numbers.map! do |value|
     value * 5
 end
@@ -42,7 +42,7 @@ p array_of_numbers
 # out permo modified capitalize array
 # process do things, have fun, get codin
 
-array_of_words = ["we", "can", "use", "a", "bang", "operator", "map"]
+array_of_words = ["we", "can", "use", "bang", "operator", "map"]
 array_of_words.map! do |value|
     value.capitalize
 end
@@ -58,10 +58,28 @@ p array_of_numbers.max
 
 # Create a method that takes in an array of words and returns the word with the least number of characters.
 
+# in: an array of words
+# out: the shortest word in the array
+# process: :))
 
+length_array = array_of_words.map do |value|
+    value = value.length
+end
+p length_array.min
 
 # Create a method that takes in an array of numbers and returns only the odd numbers sorted from least to greatest.
+# array of numbers
+# array of numbers in ascending order
+# process
+
+p array_of_numbers.sort.select{ |num| num.odd?}
+
+
 # Create a method that takes in an array of strings and returns all the strings in reverse casing. All uppercase letters should be returned lowercased and all lowercased letters should be returned in uppercase letters.
+array_of_words.map! do |value| 
+    value = value.swapcase
+end
+p array_of_words
 # Create a method that will take in an array of numbers and return an array with the remainder of each number when divided by 2.
 # Create a method that will take in a range of letters and return an array with all the letters capitalized.
 # 🏔 Stretch Goals
