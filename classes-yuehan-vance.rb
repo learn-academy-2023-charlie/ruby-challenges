@@ -43,13 +43,17 @@ class ColorPalette
         @color = color
         @color2 = color2
         @color3 = color3
+        @replaced = []
     end
 
     def all_colors 
         "This palette has #{@color}, #{@color2}, #{@color3}"
     end
 
-    
+    def color_change (sub_color)
+        @replaced << sub_color
+        
+    end
 end
 
 red = ColorPalette.new('pink', 'orange', 'amber')
@@ -58,7 +62,7 @@ green = ColorPalette.new('teal', 'emerald', 'jade')
 
 
 
-p red
+p red.color_change('fire red')
 p blue.all_colors
 p green.all_colors
 
