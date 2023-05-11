@@ -43,4 +43,24 @@ bedroom = Task.new('bed')
 # e.g. green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam')
 # As a developer, I can print the value of each individual color.
 # As a developer, I can create a method called all_colors that when called will print a sentence telling me the three colors of a given palette.
+
 # As a developer, I can change one or more colors of a given palette.
+class ColorPalette
+    attr_accessor(:color_one, :color_two, :color_three)
+    def initialize (color_one, color_two, color_three)
+        @color_one = color_one
+        @color_two = color_two
+        @color_three = color_three
+    end
+    def all_colors
+        "In this palette we have #{@color_one}, #{@color_two}, and #{@color_three}"
+    end
+end
+green = ColorPalette.new('dark green', 'light green', 'forrest green')
+blue = ColorPalette.new('💎 blue', 'sky blue', 'dark blue')
+red = ColorPalette.new('scarlett red', 'blood red', 'ruby red')
+# p blue.all_colors
+# p green.color_one
+# p red.color_two
+blue[:color_two] = 'Vaporeon blue'
+p blue
