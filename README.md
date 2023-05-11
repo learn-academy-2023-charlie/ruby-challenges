@@ -10,7 +10,7 @@ This repository holds the Ruby pair programming challenges for the 2023 Charlie 
 ### Naming Conventions
 Branches and file names should be in all lowercase letters with no spaces:
 - Branch name: topic-initials1-initials2 (ex. methods-cb-nr)
-- File name: topic-name1-name2.rb (ex. methods_charlean_nicole.rb)
+- File name: topic_name1_name2.rb (ex. methods_charlean_nicole.rb)
 ### Informational Commands
 Use this informational command to tell you what files have been modified and what phase of the git process you are on:  
 - $ `git status`  
