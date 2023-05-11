@@ -16,29 +16,51 @@ my_phone[:linkedin]= "networking"
 
 # As a developer, I can update two keys in my_phone.
 
-my_phone[:play_station] = my_phone.delete(:google_play)
+# my_phone[:play_station] = my_phone.delete(:google_play)
 # p my_phone 
 
 # As a developer, I can update two values in my_phone.
 
-my_phone[:android] = "text"
-my_phone[:itunes] = "apple"
+# my_phone[:android] = "text"
+# my_phone[:itunes] = "apple"
 # p my_phone.values
 
 # As a developer, I can delete two key:value pairs from my_phone.
 
-my_phone.delete(:itunes)
-my_phone.delete(:android)
+# my_phone.delete(:itunes)
+# my_phone.delete(:android)
 # p my_phone 
 
 # As a developer, I can use an enumerable method to return information about all of my_phone's applications.
 
- my_phone.each do |key, value|
-   p "the #{key} app is a #{value} app"
-    end
- 
+#  my_phone.each do |key, value|
+#    p "the #{key} app is a #{value} app"
+#     end
+# p my_phone
 
 # As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
 
+# my_phone.method.map do |key, value|
+#   p "the #{key} app is a #{value} app"
+# end
+
+# def phone_info(object)
+#   new_arr = []
+#   object.each do |key,value|
+#     new_arr << "#{key.capitalize} #{value}"
+#   end
+#   return new_arr
+# end
+# p phone_info(my_phone)
+
+
 # As a developer, I can create a custom method that takes in my_phone and returns an array with a sentence about the name of each app.
 
+# def phone_info(object)
+#   new_arr = []
+#   object.each do |key,value|
+#     new_arr << "The #{key.capitalize} app is a #{value} app!"
+#   end
+#   return new_arr
+# end
+# p phone_info(my_phone)
