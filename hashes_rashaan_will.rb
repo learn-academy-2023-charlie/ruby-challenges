@@ -26,6 +26,23 @@ my_phone.delete(:usaa)
 
 # p my_phone
 
-my_phone.map do |key, value|
-    p "#{key} is an app on my phone that is a #{value} app"
+# my_phone.map do |key, value|
+#     p "#{key} is an app on my phone that is a #{value} app"
+# end
+# As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
+def app_name(element)
+    element.map do |key,value|
+    "#{key.capitalize} is our name name and #{value} is our description"
+    end
 end
+
+p app_name(my_phone)
+
+# As a developer, I can create a custom method that takes in my_phone and returns an array with a sentence about the name of each app. 
+def app_sen(element)
+    element.map do |key, value|
+    "#{key} is an app on our phone that China uses to spy on us "
+    end
+end
+
+p app_sen(my_phone)
