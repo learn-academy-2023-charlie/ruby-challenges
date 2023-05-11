@@ -32,15 +32,27 @@ my_phone.map do |key, value|
     p "This #{key} has #{value} in it"
 end
 
-def my_app hash
-    hash.each do |key, value|
-        p "This #{key} has #{value} in it"
-    end
-end
-p my_app(my_phone)
+
 
 # 🏔 Stretch Goals
 # As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
 
 
+def my_app hash
+    hash.map do |key, value| 
+        p "This #{key.capitalize} has #{value.capitalize} in it"
+    end
+end
+p my_app(my_phone)
+
+
+
 # As a developer, I can create a custom method that takes in my_phone and returns an array with a sentence about the name of each app.
+def my_app hash
+    hash.map do |key, value| 
+        p "This #{app1.capitalize} is great for school"
+        p "This #{app10.capitalize} is great for work"
+        p "This #{app2.capitalize} is great for vacation"
+    end
+end
+p my_app(my_phone)
