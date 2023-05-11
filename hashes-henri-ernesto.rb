@@ -28,6 +28,26 @@ my_phone[:MIMO] = 'asks for money on higher level stuff'
 # my_phone.delete(:TINDER)
 # p my_phone
 # As a developer, I can use an enumerable method to return information about all of my_phone's applications.
-my_phone.each do |key, value|
-    p "#{key} is an app that #{value}"
-end
+# my_phone.each do |key, value|
+#     p "#{key} is an app that #{value}"
+# end
+
+# As a developer, I can create a custom method that takes in my_phone and returns an array with the app name capitalized and information about each phone app.
+
+# def caps my_phone
+#     my_phone.map do |key, value|
+#         "#{key.capitalize} is an app that #{value}"
+#     end
+# end
+# p caps my_phone
+
+
+
+# As a developer, I can create a custom method that takes in my_phone and returns an array with a sentence about the name of each app.
+
+    def caps my_phone
+        my_phone.map do |key, value|
+            "#{key.capitalize} is an app that #{value}"
+        end
+    end
+    p caps my_phone
