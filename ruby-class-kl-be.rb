@@ -32,29 +32,60 @@ end
 # end
 
 
-laundry = Task.new( 'wash the laundry' )
-dishes = Task.new( 'do the dishes' )
-trash = Task.new( 'take out trash' )
-
-p laundry.title
-laundry.completed
-p laundry.status
-
-
-
-
-
-
-
 # As a developer, I can initialize each instance of class Task with a title.
 # As a developer, I can see the title of each instance of class Task.
 # As a developer, I can initialize each instance of class Task with a status that has a default value of 'incomplete'.
 # As a developer, I can update the status of each instance of class Task when the task has been completed.
 
+# laundry = Task.new( 'wash the laundry' )
+# dishes = Task.new( 'do the dishes' )
+# trash = Task.new( 'take out trash' )
+
+# p laundry.title
+# laundry.completed
+# p laundry.status
 
 
 
 # For the following ColorPalette challenge use initialize and attr_accessor methods in your class.
+
+class ColorPalette
+    attr_accessor :color1, :color2, :color3
+
+    def initialize(color1, color2, color3)
+        @color1 = color1
+        @color2 = color2
+        @color3 = color3
+        end
+
+    def all_colors
+        puts "This color palette has #{color1}, #{color2}, and #{color3}"
+        end
+    
+    def change_color (index, new_color)
+        case index
+            when 1
+                @color1 = new_color
+            when 2
+                @color2 = new_color
+            when 3
+                @color3 = new_color
+            else
+                puts 'Invalid color index'
+            end
+        end
+    end
+
+    green = ColorPalette.new('Chartreuse', 'Kelly', 'Seafoam')
+    red = ColorPalette.new('Sangria', 'Strawberry', 'Cherry')
+    blue = ColorPalette.new('Sky Blue', 'Navy', 'Cyan')
+
+
+    puts green.color1
+    puts green.all_colors
+    green.change_color(1, 'Olive')
+    puts green.color1
+    puts green.all_colors
 
 # As a developer, I can create a class called ColorPalette.
 # As a developer, I can create three instances (objects) of class ColorPalette.
