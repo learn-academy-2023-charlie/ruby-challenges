@@ -1,5 +1,3 @@
-# Ruby Challenges
-This repository holds the Ruby pair programming challenges for the 2023 Charlie cohort.
 
 ### Process Notes
 - Anything wrapped in < > is an indication that this will be named uniquely, the < > are NOT included in the command
@@ -65,3 +63,4 @@ Branches exist on your local and on the remote. Always delete your branch in bot
 - $ `git checkout main`
 - $ `git pull origin main`
 - $ `git branch -d <branch-name>`
+
