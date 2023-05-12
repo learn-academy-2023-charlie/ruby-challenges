@@ -8,8 +8,9 @@
 #     * Hint: Use attr_accessor as well as an initialize method.
 
 class Animal
-    attr_accessor :alive, :age
-    def initialize
+    attr_accessor(:name, :alive, :age)
+    def initialize(name, alive, age)
+        @name = name
         @alive = true
         @age = 0
     end
@@ -17,33 +18,48 @@ class Animal
     def happy_birthday
         @age += 1
     end
-
 end
 
-
+# fluffy = Animal.new(true, 0)
+# p fluffy.alive
 
 # ✅ As a developer, I can create a Fish that inherits from Animal.
 # ✅ As a developer, I can initialize all of my fish to be cold_blooded. (Yes, there is one fish who is technically fully warm-blooded but we aren't going to talk about that.)
 
 class Fish < Animal
-    def initialize
+    attr_accessor(:cold_blooded, :species)
+    def initialize(name, alive, age, cold_blooded, species)
+        super(name, alive, age)
         @cold_blooded = true
+        @species = species
+    end
+
+    def fish_mail
+        "#{name} is a #{age} year old #{species} species. It is #{alive} that it is alive and it is #{cold_blooded} that it is cold blooded."
     end
 end
-Salmon = Fish.new
-
-p Salmon.cold_blooded
-p Salmon.alive
-Salmon.happy_birthday
-p Salmon.age
 
 # * As a developer, I can create a Salmon that inherits from Fish.
 
 
 # * As a developer, I can initialize my Salmon to be a specific species (Atlantic, Sockeye, etc).
+
+salmon = Fish.new('Sal', true, 0, true, 'Atlantic')
+
+
 # * As a developer, I can see that my Salmon is cold-blooded.
+
+# p salmon.cold_blooded
+
 # * As a developer, I can age my Salmon up.
+
+p salmon.happy_birthday
+p salmon.fish_mail
+
 # * As a developer, I can see a message that tells me all of my Salmon's information.
+
+
+
 # * As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life.
 #     * Hint: You will need a method that changes the status of alive in the initialize method of Animal.
 # * As a developer, I can create a Mammal that inherits from Animal.
