@@ -23,42 +23,68 @@
 
 # As a developer, I can see a message that tells me all of my Salmon's information.
 
-class Animal
-    attr_accessor :alive, :age
-    def initialize(alive, age)
-        @alive = true
-        @age = 0
-    end
-    def age_up
-        @age += 1
-    end
-end
+# class Animal
+#     attr_accessor :alive, :age
+#     def initialize(alive, age)
+#         @alive = true
+#         @age = 0
+#     end
+#     def age_up
+#         @age += 1
+#         die if dead
+#     end
+#     def dead
+#         @alive = false
+#     end
+# end
 
-    class Fish < Animal
-        attr_accessor :cold
-        def initialize (cold)
-            super(alive, age)
-            @cold = 'cold-blooded'
-        end
-    end
+#     class Fish < Animal
+#         attr_accessor :cold
+#         def initialize (cold)
+#             super(alive, age, dead)
+#             @cold = 'cold-blooded'
+#         end
+#     end
 
-        class Salmon < Fish
-            attr_accessor :species
-            def initialize (species)
-                super(cold)
-                @species = species
-            end
-            def info
-                "The #{species} salmon is #{cold} and it's #{age} year(s) old."
-            end
-        end
+        # class Salmon < Fish
+        #     attr_accessor :species
+        #     def initialize (species)
+        #         super(cold)
+        #         @species = species
+        #     end
+        #     def info
+        #         if dead 
+        #             "The #{species} salmon is #{cold} and it's #{age} year(s) old, and it is dead"
+        #         else
+        #             "The #{species} salmon is #{cold} and it's #{age} year(s) old."
+        #     end
+        #     def dead
+        #         @age >= 4
+        #     end
+        # end
 
-atlantic =Salmon.new('atlantic')
+# atlantic =Salmon.new('atlantic')
+# atlantic.age_up
+# atlantic.age_up
+# atlantic.age_up
+# atlantic.age_up
+# p atlantic.info
 
-atlantic.age_up
-atlantic.age_up
+    # class Mammal < Animal
+    #     attr_accessor :warm
+    #     def initialize (warm)
+    #         super(alive, age, dead)
+    #         @warm = 'warm-blooded'
+    #     end
+    # end
 
-p atlantic.info
+    #     class Bear < Mammal
+    #         def info
+    #             "I am a bear, and I am #{age} years old. I am #{'not' unless alive} alive and #{'not' unless warm_blooded} warm-blooded."
+    #             end
+    #         end
+
+
 
 # As a developer, if my Salmon reaches the ripe old age of 4, I can make it die peacefully after a full and happy life.
 # Hint: You will need a method that changes the status of alive in the initialize method of Animal.
@@ -75,9 +101,6 @@ p atlantic.info
 
 
 
-
-
-
 # 🏔 Stretch Goals
 # As a developer, I can keep a collection of two of each Animal.
 # Hint: You'll want to add your Animals into an array.
@@ -85,3 +108,36 @@ p atlantic.info
 # Hint: Find out how the spaceship operator can help you with an array.
 # As a developer, I can utilize a Ruby module to help DRY up my code. I can create a swim method inside of my module that will apply to Animals who can swim. This method should return "I can swim!"
 # Hint: Look into module mix ins. Since not all animals can swim, only certain Animals will have access to this module.
+
+
+class Animal
+    attr_accessor :alive, :age
+    def initialize(alive, age)
+        @alive = true
+        @age = 0
+    end
+    def age_up
+        @age += 1
+        # die if dead
+    end
+    def dead
+        @alive = false
+    end
+end
+
+class Fish > Animal
+    attr_accessor :cold_blooded
+
+    def initialize
+        super
+        @cold_blooded = true
+    end
+end
+    class Salmon < Fish
+        attr_accessor :species
+        def initialize
+            super()
+            @species = species
+        end
+        def info
+            "I am a #{@species} fish, and I am #{age} years old. I am #{ 'not' unless alive}alive and #{cold-blooded}"
