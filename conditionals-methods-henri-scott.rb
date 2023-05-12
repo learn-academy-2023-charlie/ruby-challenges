@@ -1,3 +1,4 @@
+# ruby-challenges
 # ❤️ Challenges
 
 # Create a method called sum_these_numbers which takes two integers as an argument and prints their sum to the screen.
@@ -35,22 +36,48 @@
 # end
 # p first_pal "happy"
 
+
 # ✂️ Challenge: Rock, Paper, Scissors
-
+# 
 # As the first user, I can see a prompt in the terminal to enter my name.
-puts 'enter your name'
-name = gets
 
-
-
-
+puts 'Player 1, enter your name: '
+name1 = gets.chomp
+p name1
 # As the second user, I can see a prompt in the terminal to enter my name.
-
+puts 'Player 2, enter your name: '
+name2 = gets.chomp
+p name2
 # As the first user, I can see a prompt in the terminal asking me to type either "rock", "paper", or "scissors".
-
+puts name1 , ' rock, paper or scissors?'
+answer1 = gets.chomp
+p answer1
 # As the second user, I can see a prompt in the terminal asking me to type either "rock", "paper", or "scissors".
+puts name2 , 'rock, paper or scissors?'
+answer2 = gets.chomp
+p answer2
 
 # As a user, I can see a message in the terminal depicting which user won the round.
+def who_won(answer1, answer2)
+    if answer1 == 'rock' && answer2 == 'paper'
+        "#{name2} wins!!"
+    elsif answer1 == 'rock' && answer2 == 'scissors'
+        "#{name1} winss!!"
+    elsif answer1 == 'scissors' && answer2 == 'paper'
+        "#{name1} winss!!!"
+    elsif answer1 == 'scissors' && answer2 == 'rock'
+        "#{name2} winss!!!"
+    elsif answer1 == 'paper' && answer2 == 'rock'
+        "#{name1} winss!!!"
+    elsif answer1 == 'paper' && answer2 == 'scissors'
+        "#{name2} winss!!!"
+    else answer1 == answer2
+        "It's a TIE!!!"
+    end
+end
+p who_won(name1, name2)
+
+
 
 # As a user, I can see a message in the terminal noting if there was a tie.
 
