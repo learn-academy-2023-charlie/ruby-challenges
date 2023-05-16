@@ -1,5 +1,6 @@
 require 'rspec'
 require_relative 'rspec'
+require 'date'
 
 # ✅ Challenge: Tasks
 # Process: Copy the story into your RSpec file. Write the test FIRST. Ensure the test fails correctly. Then write the code that will make the test pass.
@@ -32,6 +33,15 @@ describe Task do
         expect(walk_the_dog.status).to eq 'done'
     end 
 
+    it 'prints task name status if status is done' do
+        my_task = Task.new('done')
+        expect(my_task.print).to eq [nil, 'done']
+    end
+
+    it 'has a due date' do
+        my_task = Task.new
+        expect{ my_task.when_due(2) }.to change{my_task.due_date}.from(Date.today).to(Date.today + 2)
+    end
 end
 
 
