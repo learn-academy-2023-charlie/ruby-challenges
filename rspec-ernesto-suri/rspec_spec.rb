@@ -27,23 +27,15 @@ describe 'Task' do
         my_task = Task.new
         expect(my_task.status).to be_a String
         expect(my_task.status).to eq 'in progress'
+        #update
         study = Task.new 'done'
         expect(study.status).to eq 'done'
     end
-    it 'sets a due date' do
-        date = Date.new(2023, 5, 16)
-        expect(date)
-
-
-
-
-
-
-
-        
-
+        it 'task has a due date' do
+            my_task = Task.new
+            date_string = 'May 20'
+            my_task.set_due_date(date_string)
+            expect(my_task.due_date).to eq(Date.parse(date_string))
+        end    
 end
-   
-    # it 'gives task a title' do
-    #     result = my_task.
-        # expect(my_task.title).to eq
+
