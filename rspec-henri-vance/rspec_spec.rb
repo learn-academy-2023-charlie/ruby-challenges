@@ -1,4 +1,5 @@
 require 'rspec'
+require 'date'
 require_relative 'rspec'
 
 describe 'Task' do
@@ -21,15 +22,32 @@ describe 'Task' do
   end
 
   it 'has a status' do
-    my_Task = Task.new('In progress')
+    my_Task = Task.new('Car Wash')
     my_Task.status = 'In progress'
+    my_Task.description = 'With soap and wax'
     expect(my_Task.status).to be_a String
     expect(my_Task.status).to eq 'In progress'
   end
-    # status_complete = Task.new('In progress')
-    # expect(status_complete.status).to eq('In progress')
-  # end
+   
+  it 'marks a task as done' do
+    my_task = Task.new
+    # This is one way to do it
+    # my_task.done
+    # expect(my_task.status).to be_a String
+    # expect(my_task.status).to eq 'Complete'
+    p my_task
+    expect{ my_task.done }.to change{ my_task.status }.from('In progress').to('Complete')
+  end
+
+  it 'gives a due date' do
+    my_task = Task.new
+    # my_task.due_date
+    expect(my_task.due_date(2023, 7, 8)).to eq(Date.new(2023, 7, 8))
+  end
 end
+
+
+
 
 # ✅ Challenge: Tasks
 # Process: Copy the story into your RSpec file. Write the test FIRST. Ensure the test fails correctly. Then write the code that will make the test pass.
@@ -39,7 +57,7 @@ end
 # As a developer, I can give a Task a title and retrieve it.✅
 # As a developer, I can give a Task a description and retrieve it.✅
 # As a developer, I can mark a Task done. Tasks should be initialized as 'in progress'.✅
-# As a developer, when I print a Task that is done, its status is shown.
+# As a developer, when I print a Task that is done, its status is shown.✅
 # As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.
 # 🏔 Stretch Goals
 # As a developer, I can add all of my Tasks to a TaskList.
