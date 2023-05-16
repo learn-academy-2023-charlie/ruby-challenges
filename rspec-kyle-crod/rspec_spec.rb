@@ -6,12 +6,16 @@
 # As a developer, I can give a Task a description and retrieve it.
 # As a developer, I can mark a Task done. Tasks should be initialized as 'in progress'.
 # As a developer, when I print a Task that is done, its status is shown.
-
 # As a developer, I can give a Task a due date. Hint: Use the built-in Ruby Date class.
+
+
 # 🏔 Stretch Goals
 # As a developer, I can add all of my Tasks to a TaskList.
+
 # As a developer with a TaskList, I can print the completed items.
 # As a developer with a TaskList, I can print the incomplete items.
+
+
 # As a developer with a TaskList, I can list all the not completed items that are due today.
 # As a developer with a TaskList, I can list all the incomplete items in order of due date.
 # As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
@@ -19,6 +23,7 @@
 
 require 'rspec'
 require_relative 'rspec'
+require 'Date'
 
 describe Task do
     it 'has to be real' do 
@@ -41,10 +46,25 @@ describe Task do
     end
     it 'due_date' do
         task = Task.new('laundry')
-
-        expect(task.due_date).to eq(0)
-        expect(task.due_date).to be_a(Integer)
+        due_date = Date.today + 7
+        task.due_date = due_date
+        expect(task.due_date).to eq(due_date)
+        
     end
 end
 
+describe TaskList do
+    it 'has to be real' do
+        expect { TaskList.new }.to_not raise_error
+    end
 
+    it 'can show completed items' do
+        TaskList = TaskList.new()
+        expect(TaskList.new).to eq ('completed')
+    end
+    it 'can show incomplete items' do
+        TaskList = TaskList.new()
+        expect(TaskList.new).to eq ('incomplete')
+    end
+
+end
