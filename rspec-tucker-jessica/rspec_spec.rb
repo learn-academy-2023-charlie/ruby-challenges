@@ -14,7 +14,7 @@ describe 'Task' do
     # Failed examples:
     # rspec ./rspec_spec.rb:5 # Task has to be real
     # rspec ./rspec_spec.rb:9 # Task has to have a title
-    
+
     # Pass:
 #     Task
 #   has to be real
@@ -22,7 +22,7 @@ describe 'Task' do
 
 # Finished in 0.00148 seconds (files took 0.04741 seconds to load)
 # 2 examples, 0 failures
-    
+
     it 'has to have a description' do
     my_task = Task.new
     my_task.description = 'description'
@@ -37,6 +37,10 @@ describe 'Task' do
 #   has to be real
 #   has to have a title
 #   has to have a description
-
-    
+    it 'has to mark a Task done' do
+        my_task = Task.new
+        my_task.status = 'in progress'
+        expect(my_task.status).to eq('in progress')
+        expect(my_task.status).to be_a String
+    end
 end  
