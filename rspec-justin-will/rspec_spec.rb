@@ -50,7 +50,7 @@ describe Task do
 
     it 'Task a due date' do
         dishes = Task.new
-        expect{ dishes.require_date('2023-05-16')}.to change{ dishes.date}.from('0000-00-00').to('2023-05-16')
+        expect(dishes.require_date(2023, 05, 16)).to eq(Date.new(2023, 05, 16))
     end
-    
+
 end
