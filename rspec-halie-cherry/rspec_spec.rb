@@ -28,10 +28,12 @@ describe Task do
         my_task = Task.new
         expect(my_task.status).to eq 'in progress'
         expect(my_task.status).to be_a String
-        walk the dog = Book.new 'done'
-        e
+        walk_the_dog = Task.new 'done'
+        expect(walk_the_dog.status).to eq 'done'
+    end 
 
 end
+
 
 # NameError: uninitialized constant Task
 

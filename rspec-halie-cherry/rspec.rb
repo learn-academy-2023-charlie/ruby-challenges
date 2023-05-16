@@ -2,14 +2,22 @@
 # Process: Copy the story into your RSpec file. Write the test FIRST. Ensure the test fails correctly. Then write the code that will make the test pass.
 
 class Task
-    attr_accessor :title, :description
+    attr_accessor :title, :description, :status
 
-    def initialize (status = "in progress")
+    def initialize (status = 'in progress')
         @title = title
         @description = description
         @status = status
     end
+    def completed 
+        if status == 'done'
+            p Task.status 
+        end
+    end        
 end
+
+test_task = Task.new ('done')
+p test_task
 
 # 📚 User Stories
 # As a developer, I can create a Task.
