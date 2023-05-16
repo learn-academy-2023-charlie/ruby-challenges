@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative 'rspec'
+require_relative 'rspec.rb'
 
 describe Task do
     it 'has to be real' do
@@ -7,6 +7,17 @@ describe Task do
     end
 
     it 'give a Task a title' do
-        expect(Task.title).to be_a String
-        expect(Task.title).to eq 'Doing dishs'
+        d_task = Task.new
+        d_task.title = 'Dishes'
+        expect(d_task.title).to be_a String
+        expect(d_task.title).to eq 'Dishes'
     end
+
+    it 'give a Task a description' do
+        d_task = Task.new
+        d_task.description = 'Doing dishes'
+        expect(d_task.description).to be_a String
+        expect(d_task.description).to eq 'Doing dishes'
+    end
+
+end
