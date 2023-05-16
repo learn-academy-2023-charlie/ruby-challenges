@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative 'rspec'
+require_relative 'rspec.rb'
 
 # 📚 User Stories
 # As a developer, I can create a Task.
@@ -17,7 +17,34 @@ require_relative 'rspec'
 # As a developer with a TaskList with and without due dates, I can list all the not completed items in order of due date, and then the items without due dates.
 
 describe Task do
+    
     it 'has to be real' do
         expect{ Task.new }.to_not raise_error
     end
+
+    it 'has a title' do
+        dishes = Task.new
+        dishes.title = 'Dishes'
+        expect(dishes.title).to eq('Dishes')
+        expect(dishes.title).to be_a(String)
+    end
+
+    it 'has a description' do
+        dishes = Task.new
+        dishes.description = 'must be completed every night'
+        expect(dishes.description).to eq('must be completed every night')
+        expect(dishes.description).to be_a(String)
+    end
+
+    it 'has a status' do
+        dishes = Task.new
+        expect(dishes.status).to eq('in progress')
+        expect(dishes.status).to be_a(String)
+    end
+
+    it 'status can be updated' do
+        dishes = Task.new
+        expect{ dishes.update_status('done')}.to change{ dishes.status}.from('in progress').to('done')
+    end
+    
 end
