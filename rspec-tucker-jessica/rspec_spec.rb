@@ -37,6 +37,10 @@ describe 'Task' do
 #   has to be real
 #   has to have a title
 #   has to have a description
-
-    
+    it 'has to mark a Task done' do
+        my_task = Task.new
+        my_task.status = 'in progress'
+        expect(my_task.status).to eq('in progress')
+        expect(my_task.status).to be_a String
+    end
 end  
